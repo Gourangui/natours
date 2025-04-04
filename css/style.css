@@ -1,26 +1,34 @@
 /*
 COLORS:
 
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
+$light-green: #7ed56f;
+$medium-green: #55c57a;
+$dark-green: #28b485;
 
 */
 
+
 /* resets */
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
+
+html {
+    font-size: 100%;
+}   
 
 body {
     font-family: "Lato", sans-serif;
     font-weight: 200;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.7;
     color: #777;
-    padding: 38px;
+    padding: 2.375rem;
+    box-sizing: border-box;
 }
 
 .header {
@@ -31,17 +39,17 @@ body {
     position: relative;
 }
 
-.logo-box {
+.header__logo-box {
     position: absolute;
-    left: 40px;
-    top: 40px;
+    left: 2.5rem;
+    top: 2.5rem;
 }
 
-.logo {
-    height: 35px;
+.header__logo {
+    height: 2.1875rem;
 }
 
-.text-box{
+.header__text-box{
     position: absolute;
     top: 40%;
     left: 50%;
@@ -53,7 +61,7 @@ body {
     color: #fff;
     text-transform: uppercase;
     backface-visibility: hidden;
-    margin-bottom: 28px;
+    margin-bottom: 1.75rem;
 }
 
 .heading-primary-main,
@@ -62,28 +70,28 @@ body {
 }
 
 .heading-primary-main{
-    font-size: 60px;
+    font-size: 3.75rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 2.1875rem;;
 
     animation: moveInLeft 1s ease-out;
 }
 
 .heading-primary-sub {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
-    letter-spacing: 17.4px;
+    letter-spacing: 1.0875rem;
     animation: moveInRight 1s ease-out;
 }
 
 @keyframes moveInLeft {
     0% {
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateX(-6.25rem);
     }
 
     80% {
-        transform: translateX(10px);
+        transform: translateX(0.625rem);
     }
 
     100% {
@@ -95,11 +103,11 @@ body {
 @keyframes moveInRight {
     0% {
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(6.25rem);
     }
 
     80% {
-        transform: translateX(-10px);
+        transform: translateX(-0.625rem);
     }
 
     100% {
@@ -111,7 +119,7 @@ body {
 @keyframes moveInButton {
     0% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(1.875rem);
     }
 
     100% {
@@ -124,21 +132,21 @@ body {
 .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
-    border-radius: 100px;
+    padding: 0.9375rem 2.5rem;
+    border-radius: 6.25rem;
     display: inline-block;
     transition: all 300ms;
     position: relative;
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+    transform: translateY(-0.1875rem);
+    box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, .2);
 }
 
 .btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
+    transform: translateY(-0.0625rem);
+    box-shadow: 0 5px 1.25rem rgba(0, 0, 0, .2);
 }
 
 .btn::after{
@@ -146,7 +154,7 @@ body {
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: 6.25rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -159,16 +167,16 @@ body {
     opacity: 0;
 }
 
-.btn-white {
+.btn--white {
     background-color: #fff;
     color: #777;
 }
 
-.btn-white::after{
+.btn--white::after{
     background-color: #fff;
 }
 
-.btn-animated {
+.btn--animated {
     animation: moveInButton .5s ease-out .75s;
     animation-fill-mode: backwards;
 }
