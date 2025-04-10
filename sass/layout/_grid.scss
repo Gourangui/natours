@@ -15,7 +15,6 @@
         $ ends with
     */
     [class^="col-"] {
-        background-color: lightblue;
         float: left;
 
         &:not(:last-child) {

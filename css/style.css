@@ -1,5 +1,6 @@
 /* COLORS */
 /* GRID */
+/* FONT */
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -72,12 +73,46 @@ body {
   font-size: 3.5rem;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 2rem;
   display: inline-block;
   background-image: linear-gradient(to right, #7ed56f, #28b485);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+  /* &:hover{
+      transform: skewY(2deg) skew(15deg) scale(1.1);
+      text-shadow: .5rem .5rem 0 rgba($color-dark, 2);
+  } */
+}
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+}
+.paragraph:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-lg {
+  margin-bottom: 8rem;
+}
+
+.mb-md {
+  margin-bottom: 4rem;
+}
+
+.mb-sm {
+  margin-bottom: 1.5rem;
 }
 
 *,
@@ -141,6 +176,61 @@ body {
   animation-fill-mode: backwards;
 }
 
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #55c57a;
+  padding: 3px;
+  transition: all 200ms;
+}
+.btn-text:hover {
+  color: #fff;
+  background-color: #55c57a;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+.btn-text:active {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0);
+  color: #7ed56f;
+}
+
+.composition {
+  position: relative;
+}
+.composition:hover .composition__photo:not(:hover) {
+  transform: scale(0.95);
+}
+.composition__photo {
+  width: 55%;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  position: absolute;
+  transition: all 0.3s;
+  z-index: 10;
+  outline-offset: 2rem;
+}
+.composition__photo:hover {
+  transform: scale(1.05);
+  z-index: 20;
+  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+  outline: 1.5rem solid #55c57a;
+}
+.composition__photo--p1 {
+  left: 0;
+  top: -2rem;
+}
+.composition__photo--p2 {
+  right: 0;
+  top: 2rem;
+}
+.composition__photo--p3 {
+  left: 20%;
+  top: 10rem;
+}
+
 .row {
   max-width: 1140px;
   /* background-color: antiquewhite; */
@@ -160,7 +250,6 @@ body {
   margin-bottom: 80px;
 }
 .row [class^=col-] {
-  background-color: lightblue;
   float: left;
 }
 .row [class^=col-]:not(:last-child) {
